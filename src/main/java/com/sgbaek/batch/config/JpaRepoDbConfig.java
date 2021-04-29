@@ -31,17 +31,6 @@ import javax.sql.DataSource;
         transactionManagerRef = "jpaTransactionManager"
 )
 public class JpaRepoDbConfig {
-    @Autowired
-    private Environment env;
-
-//  use properties auto
-    private final JpaProperties jpaProperties;
-    private final HibernateProperties hibernateProperties;
-
-    public JpaRepoDbConfig(JpaProperties jpaProperties, HibernateProperties hibernateProperties){
-        this.jpaProperties = jpaProperties;
-        this.hibernateProperties = hibernateProperties;
-    }
 
     @Bean
     public HibernateJpaVendorAdapter hibernateJpaVendorAdapter() {
