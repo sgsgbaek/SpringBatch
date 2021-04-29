@@ -1,0 +1,25 @@
+spring:
+  batch:
+    job:
+      names: ${job.name:NONE}
+  #main:
+    # Set bean overriding true
+    #allow-bean-definition-overriding: true
+
+  # Set dual database for batch jop repository and JPA
+  datasource:
+    # database for batch job repository
+    job-repository-config:
+      pool-name: batchHikariPool
+      jdbcUrl: jdbc:mysql://localhost:3306/batch
+      username: id
+      password: pw
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    # database for JPA repository
+    jpa-repository-config:
+      pool-name: jpaHikariPool
+      jdbcUrl: jdbc:mysql://localhost:3306/jpa
+      username: id
+      password: pw
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
