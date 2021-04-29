@@ -22,7 +22,6 @@ public class SimpleJobConfiguration {
     MyJpaRepository myJpaRepository;
 
     @Bean
-    @Qualifier("batchDataSource")
     public Job job(){
         return jobBuilderFactory.get("simplejob")
                 .start(step1())
